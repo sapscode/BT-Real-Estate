@@ -1,16 +1,41 @@
+{% load static %} <!-- to load all static files from the static folder-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}"> <!-- telling the link to look into static folder for this file-->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+
     <title>BT REAL ESTATE</title>
 </head>
 <body>
+    <!-- Top Bar -->
+    {% include 'partials/_topbar.html' %} <!-- using partials, which is a way to de clutter the base html, by putting every particular code in their partial file (in templates), and including them here like this-->
+
+    <!-- Navbar -->
+    {% include 'partials/_navbar.html' %}
+
     {%block content%}
 
     <!-- any content in this will be displayed on every other page-->
     <!-- they just have to extend this and write the html within these tags-->
 
     {%endblock%}
+
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+    <script src="{% static 'js/lightbox.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %} "></script>
 </body>
 </html>
