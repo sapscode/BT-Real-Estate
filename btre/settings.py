@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +158,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'saptarshi0002@gmail.com'
 EMAIL_HOST_PASSWORD = 'Sparemail@99'
 EMAIL_USE_TLS = True
+
+
+AWS_ACCESS_KEY_ID = 'AKIASKB3K7SC33AMQB7P'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'saps-btre'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
