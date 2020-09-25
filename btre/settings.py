@@ -139,6 +139,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'btre/static') #to look for static files initially
 ]
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 #media folder setttings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
