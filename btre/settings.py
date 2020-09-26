@@ -140,7 +140,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'btre/static') #to look for static files initially
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #media folder setttings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'live-static-files', 'media')
@@ -166,4 +166,4 @@ AWS_STORAGE_BUCKET_NAME = 'saps-btre'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
