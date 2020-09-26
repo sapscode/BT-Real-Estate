@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'p3i&l@5c57l=_#s&i728v#+j@j96gp$*vch!vbgg9+v_%*rw%$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['bt-real-estatex.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = [] #['bt-real-estatex.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -140,11 +140,21 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'btre/static') #to look for static files initially
 ]
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+AWS_ACCESS_KEY_ID = 'AKIASKB3K7SC33AMQB7P'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'saps-btre'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = 'public-read'
 
 #media folder setttings
-MEDIA_ROOT = os.path.join(BASE_DIR, 'live-static-files', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 #Messages
 from django.contrib.messages import constants as messages
@@ -160,10 +170,4 @@ EMAIL_HOST_PASSWORD = 'Sparemail@99'
 EMAIL_USE_TLS = True
 
 
-AWS_ACCESS_KEY_ID = 'AKIASKB3K7SC33AMQB7P'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'saps-btre'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
