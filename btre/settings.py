@@ -146,7 +146,7 @@ AWS_ACCESS_KEY_ID = 'AKIASKB3K7SC33AMQB7P'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'saps-btre'
 AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = 'public-read'
+AWS_DEFAULT_ACL = None
 
 #media folder setttings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
